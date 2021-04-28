@@ -90,3 +90,28 @@ Connection to 127.0.0.1 closed.
 [vagrant@kernel-update ~]$ uname -r
 5.12.0-1.el7.elrepo.x86_64
 ```
+# **PACKER** 
+
+Пробуем запустить билд :
+
+```console
+$ packer build centos.json
+Error: Failed to prepare build: "centos-7.7"
+
+1 error occurred:
+	* Deprecated configuration key: 'iso_checksum_type'. Please call `packer fix`
+against your template to update your template to be compatible with the current
+version of Packer. Visit https://www.packer.io/docs/commands/fix/ for more
+detail.
+
+```
+
+Запускаем ```packer fix centos.json``` видим что строки 'iso_checksum_type' нету в выводе.   
+Удаляем ее из centos.json. Запускаем билд :
+
+```console
+$ packer build centos.json  
+centos-7.7: output will be in this color.
+
+==> centos-7.7: Cannot find "Default Guest Additions ISO" in vboxmanage output (or it is empty)
+==> centos-7.7: Retrieving Guest additions checksums
