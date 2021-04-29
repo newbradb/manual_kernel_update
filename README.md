@@ -115,3 +115,13 @@ centos-7.7: output will be in this color.
 
 ==> centos-7.7: Cannot find "Default Guest Additions ISO" in vboxmanage output (or it is empty)
 ==> centos-7.7: Retrieving Guest additions checksums
+
+...
+
+Build 'centos-7.7' finished after 10 minutes 14 seconds.
+
+==> Wait completed after 10 minutes 14 seconds
+
+==> Builds finished. The artifacts of successful builds are:
+--> centos-7.7: 'virtualbox' provider box: centos-7.7.1908-kernel-5-x86_64-Minimal.box
+```
