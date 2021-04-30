@@ -125,3 +125,24 @@ Build 'centos-7.7' finished after 10 minutes 14 seconds.
 ==> Builds finished. The artifacts of successful builds are:
 --> centos-7.7: 'virtualbox' provider box: centos-7.7.1908-kernel-5-x86_64-Minimal.box
 ```
+
+### **vagrant init (тестирование)**
+Проведем тестирование созданного образа. Выполним его импорт в `vagrant`:
+
+```console
+$ vagrant box add --name centos7_5 centos-7.7.1908-kernel-5-x86_64-Minimal.box 
+
+==> box: Box file was not detected as metadata. Adding it directly...
+==> box: Adding box 'centos7_5' (v0) for provider: 
+    box: Unpacking necessary files from: file:///media/prokofievfamily/hdd1/tech/linux/packer/centos-7.7.1908-kernel-5-x86_64-Minimal.box
+==> box: Successfully added box 'centos7_5' (v0) for 'virtualbox'!
+```
+
+Проверим его в списке имеющихся образов :
+
+```console
+$ vagrant box list
+centos7_5           (virtualbox, 0)
+```
+
+
