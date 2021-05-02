@@ -145,4 +145,49 @@ $ vagrant box list
 centos7_5           (virtualbox, 0)
 ```
 
+Теперь необходимо провести тестирование полученного образа. Для этого создадим новый Vagrantfile или воспользуемся имеющимся. Для нового создадим директорию `test` и в ней выполним инит:
 
+```console
+$ vagrant init centos7_5
+A `Vagrantfile` has been placed in this directory. You are now
+ready to `vagrant up` your first virtual environment! Please read
+the comments in the Vagrantfile as well as documentation on
+`vagrantup.com` for more information on using Vagrant.
+```
+
+Теперь запустим виртуальную машину, подключимся к ней и проверим, что у нас в ней новое ядро:
+
+```console
+$ vagrant up
+Bringing machine 'default' up with 'virtualbox' provider...
+
+$ vagrant ssh  
+Last login: Thu Apr 29 14:36:20 2021 from 10.0.2.2
+[vagrant@localhost ~]$ uname -r
+5.12.0-1.el7.elrepo.x86_64
+[vagrant@localhost ~]$
+
+```
+
+# **Vagrant cloud**
+
+Поделимся полученным образом с сообществом. Для этого зальем его в Vagrant Cloud. М
+Логинимся в `vagrant cloud`, указывая e-mail, пароль и описание выданого токена (можно оставить по-умолчанию)
+```
+vagrant cloud auth login
+Vagrant Cloud username or email: <user_email>
+Password (will be hidden): 
+
+You are now logged in.
+```
+Теперь публикуем полученный бокс:
+```
+vagrant cloud publish --release <username>/centos-7-5 1.0 virtualbox \
+        centos-7.7.1908-kernel-5-x86_64-Minimal.box
+
+Complete! Published newbradb/centos-7-5
+tag:             newbradb/centos-7-5
+username:        newbradb
+
+
+```
