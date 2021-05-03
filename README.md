@@ -1,6 +1,6 @@
 # Home work 1
 
-Ссылка на vargant cloud [тут](ttps://app.vagrantup.com/newbradb/boxes/centos-7-5)  
+Ссылка на vargant cloud [тут](https://app.vagrantup.com/newbradb/boxes/centos-7-5)  
 Varganfile с боксом [тут](https://github.com/newbradb/manual_kernel_update/blob/master/test/Vagrantfile)  
 Шаги в README ниже  
 
